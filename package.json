@@ -14,5 +14,8 @@
     "mongoose": "^5.10.6",
     "morgan": "~1.9.1",
     "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "locus": "^2.0.4"
   }
 }
