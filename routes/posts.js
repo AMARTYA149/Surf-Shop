@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET posts index /posts */
-router.get('/', (req, res, next) => {
-  res.send('INDEX /posts');
-});
-
 // // Restful routing
 // GET index       /posts
 // GET new         /posts/new
@@ -14,6 +9,13 @@ router.get('/', (req, res, next) => {
 // GET edit        /posts/:id/edit
 // GET update      /posts/:id
 // DELETE destroy  /posts/:id
+
+
+/* GET posts index /posts */
+router.get('/', (req, res, next) => {
+  res.send('INDEX /posts');
+});
+
 
 /* GET posts new /posts/new */
 router.get('/new', (req, res, next) => {
