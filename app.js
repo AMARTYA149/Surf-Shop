@@ -26,7 +26,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Configure Passport and Sessions
-// CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
+app.use(session({
+  secret: 'i love coding',
+  resave: false,
+  saveUninitialized: true
+}))
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
