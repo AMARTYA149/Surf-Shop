@@ -1,8 +1,13 @@
-const Post = require('../models/post');
+const Post = require("../models/post");
 
 module.exports = {
-  async getPosts(req, res, next){
+  //Posts Index
+  async getPosts(req, res, next) {
     let posts = await Post.find({});
-    res.render('posts/index', { posts: posts});
-  }
-}
+    res.render("posts/index", { posts: posts });
+  },
+
+  newPost(req, res, next) {
+    res.render("posts/new");
+  },
+};
