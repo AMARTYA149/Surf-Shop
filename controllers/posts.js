@@ -6,8 +6,14 @@ module.exports = {
     let posts = await Post.find({});
     res.render("posts/index", { posts: posts });
   },
-
+  //Posts New
   newPost(req, res, next) {
     res.render("posts/new");
+  },
+  //Posts create
+  async createPost(req, res, next) {
+    //use req.body to create a new post
+    let post = await Post.create(req.body);
+    res.redirect(`/posts/${post.id}`);
   },
 };
