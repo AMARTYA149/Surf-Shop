@@ -1,7 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { errorHandler } = require("../middleware/index");
-const { getPosts, newPost, createPost } = require("../controllers/posts");
+const {
+  getPosts,
+  newPost,
+  createPost,
+  showPost,
+} = require("../controllers/posts");
 
 // // Restful routing
 // GET index       /posts
@@ -24,9 +29,7 @@ router.post("/", errorHandler(createPost));
 module.exports = router;
 
 /* GET posts show /posts/:id */
-router.get("/:id", (req, res, next) => {
-  res.send("SHOW /posts/:id");
-});
+router.get("/:id", errorHandler(showPost));
 module.exports = router;
 
 /* GET posts edit /posts/:id/edit */
