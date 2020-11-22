@@ -6,6 +6,7 @@ const {
   newPost,
   createPost,
   showPost,
+  editPost,
 } = require("../controllers/posts");
 
 // // Restful routing
@@ -22,27 +23,20 @@ router.get("/", errorHandler(getPosts));
 
 /* GET posts new /posts/new */
 router.get("/new", newPost);
-module.exports = router;
 
 /* POST posts create /posts */
 router.post("/", errorHandler(createPost));
-module.exports = router;
 
 /* GET posts show /posts/:id */
 router.get("/:id", errorHandler(showPost));
-module.exports = router;
 
 /* GET posts edit /posts/:id/edit */
-router.get("/:id/edit", (req, res, next) => {
-  res.send("EDIT /posts/:id/edit");
-});
-module.exports = router;
+router.get("/:id/edit", errorHandler(editPost));
 
 /* PUT posts update /posts/:id */
 router.put("/:id", (req, res, next) => {
   res.send("UPDATE /posts/:id");
 });
-module.exports = router;
 
 /* DELETE posts destroy /posts/:id */
 router.delete("/:id", (req, res, next) => {
