@@ -18,6 +18,14 @@
     />
   </div>
   <div>
+    <input type="file" name="images" accept="images/*" multiple />
+    <div>
+      <% post.images.forEach(function(image){ %>
+      <img src="<%= image.url %>" alt="" width="100px" />
+      <% }) %>
+    </div>
+  </div>
+  <div>
     <textarea name="post[description]" placeholder="Description">
 <%= post.description%></textarea
     >
